@@ -1,0 +1,18 @@
+#!/bin/bash
+XENSTOREREAD=`which xenstore-read`
+
+[ -x $XENSTOREREAD ] || exit 0
+
+# ssh key to add .ssh/authorized_keys file
+AK=`$XENSTOREREAD vm-data/ak`
+
+[ "$AK" = "" ] && exit 0
+
+mkdir /root/.ssh
+touch /root/.ssh/authorized_keys
+
+cat << EOF > /root/.ssh/authorized_keys
+$AK	
+EOF
+
+exit 0
