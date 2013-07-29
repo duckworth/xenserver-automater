@@ -4,12 +4,11 @@ if [ -e $XENSTOREREAD ]; then
   NAME=`$XENSTOREREAD name`
   DOMAIN=`$XENSTOREREAD vm-data/dm`
 
+  # require both the name and domain to alter configuration
   [ "$NAME" = "" ] && exit 0
-  echo "$NAME" > /etc/hostname
-  /bin/hostname -F /etc/hostname
-
-  #if domain info wasn't passed in then dont alter the hosts file
   [ "$DOMAIN" = "" ] && exit 0
+
+  sed -r "s/HOSTNAME=.*\$/HOSTNAME=$NAME.$DOMAIN/" /etc/sysconfig/network
 
   # read passed in IP address if it exists
   IP=`$XENSTOREREAD vm-data/ip`
