@@ -2,7 +2,7 @@
 #
 # kickstart
 # 
-# chkconfig: 2345 9 99
+# chkconfig: 2345 9 99 99
 # description: VM Kickstart from URL
 
 function kickstart(){
@@ -16,8 +16,8 @@ function kickstart(){
     KICKSTART_URL=`$XENSTOREREAD vm-data/ks`
     [ "$KICKSTART_URL" = "" ] && exit 0
     [ -f $KICKSTART_STATUS ] && exit 0
+    $CURL -k $KICKSTART_URL 2>/dev/null|bash
     touch $KICKSTART_STATUS
-    $CURL $KICKSTART_URL |bash
 }
 
 
