@@ -2,7 +2,7 @@
 #
 # kickstart
 # 
-# chkconfig: 2345 9 99 99
+# chkconfig: 2345 99 99
 # description: VM Kickstart from URL
 
 function kickstart(){
