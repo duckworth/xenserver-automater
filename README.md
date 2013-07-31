@@ -19,7 +19,7 @@ xe vm-start uuid=$UUID
 Use this commands to install xenserver-automater to your vm template
 
 ```sh
-wget https://github.com/oguzbilgic/xenserver-automater/tarball/master -O xenserver-automater.tar.gz
+wget https://github.com/tumf/xenserver-automater/tarball/master -O xenserver-automater.tar.gz
 tar -xvf xenserver-automater.tar.gz
 cd 
 bash install.sh
