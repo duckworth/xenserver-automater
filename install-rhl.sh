@@ -11,5 +11,5 @@ install -m 755 etc/init.d/xe-automater /etc/init.d/xe-automater
 
 # set service
 /sbin/chkconfig kickstart on
-/sbin/chkconfig xe-set-hostanme on
+/sbin/chkconfig xe-automater off
 
