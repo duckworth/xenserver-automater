@@ -7,7 +7,6 @@
 
 function kickstart(){
     CURL=`which curl`
-    XENSTOREREAD=`which xenstore-read`
     KICKSTART_STATUS=/etc/sysconfig/kickstart
 
     [ -x $XENSTOREREAD ] || exit 255
