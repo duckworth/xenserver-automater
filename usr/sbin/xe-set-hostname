@@ -14,7 +14,9 @@ if [ -e $XENSTOREREAD ]; then
   IP=`$XENSTOREREAD vm-data/ip`
 
   # otherwise just use the ip address that the machine has already
-  if [ $IP = "" ]; then IP=`ip addr list eth0 | grep "inet " | cut -d' ' -f6 | cut -d/ -f1`; fi
+  if [ -z $IP ]; then
+    IP=`ip addr list eth0 | grep "inet " | cut -d' ' -f6 | cut -d/ -f1`
+  fi
 
 cat << EOF > /etc/hosts
 127.0.0.1	localhost

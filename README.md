@@ -4,6 +4,9 @@ Automaticall configure network settings of your guest vm up on provisioning
 
 ## Usage
 
+used with knife-xenserver https://github.com/bvox/knife-xenserver
+
+
 ```sh
 UUID=`xe vm-install template=mytemplate  new-name-label=newvm`
 xe vm-param-set uuid=$UUID xenstore-data:vm-data/ip=192.168.1.20
@@ -16,11 +19,11 @@ xe vm-start uuid=$UUID
 
 ## Install
 
-Use this commands to install xenserver-automater to your vm template
+Commands to install xenserver-automater to your vm template
 
 ```sh
-wget https://github.com/tumf/xenserver-automater/tarball/master -O xenserver-automater.tar.gz
+wget https://github.com/duckworth/xenserver-automater/tarball/master -O xenserver-automater.tar.gz
 tar -xvf xenserver-automater.tar.gz
 cd 
-bash install.sh
+bash install.sh (ubuntu) or install-rhl.sh (centos/redhat)
 ```

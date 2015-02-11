@@ -15,10 +15,11 @@ DM=`$XENSTOREREAD vm-data/dm`
 [ "$NS" = "" ] && exit 0
 [ "$DM" = "" ] && exit 0
 
-cat << EOF > /etc/sysconfig/network-scripts/ifcfg-eth1
-DEVICE=eth1
+cat << EOF > /etc/sysconfig/network-scripts/ifcfg-eth0
+DEVICE=eth0
 BOOTPROTO=static
 ONBOOT=yes
+NM_CONTROLLED=yes
 IPADDR=$IP
 NETMASK=$NM
 EOF
@@ -33,9 +34,6 @@ cat << EOF > /etc/resolv.conf
 search $DOMAIN
 nameserver $NS
 EOF
-# update hosts
-# host file is altered in xe-set-hostanme now
-#env HOSTNAME=`hostname -s` IP=$IP perl -pi -e 's/^(\d+\.\d+\.\d+\.\d+)(\s+$ENV{HOSTNAME})/$ENV{IP}$2/' /etc/hosts
 
 /etc/init.d/network restart
 
