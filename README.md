@@ -1,6 +1,6 @@
 # XenServer Automater
 
-Automaticall configure network settings of your guest vm up on provisioning
+Automatically configure network settings of your guest vm up on provisioning
 
 ## Usage
 
