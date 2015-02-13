@@ -3,6 +3,7 @@ XENSTOREREAD=`which xenstore-read`
 
 [ -x $XENSTOREREAD ] || exit 0
 
+NAME=`$XENSTOREREAD name`
 IP=`$XENSTOREREAD vm-data/ip`
 GW=`$XENSTOREREAD vm-data/gw`
 NM=`$XENSTOREREAD vm-data/nm`
@@ -26,12 +27,12 @@ EOF
 
 cat << EOF > /etc/sysconfig/network
 NETWORKING=yes
-HOSTNAME=$NAME.$DOMAIN
+HOSTNAME=$NAME.$DM
 GATEWAY=$IP
 EOF
 
 cat << EOF > /etc/resolv.conf
-search $DOMAIN
+search $DM
 nameserver $NS
 EOF
 
