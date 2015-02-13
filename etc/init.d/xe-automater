@@ -2,7 +2,7 @@
 #
 # xe-automater
 # 
-# chkconfig: 2345 85 15
+# chkconfig: 2345 15 85
 # description: XenServer Guest Configuration Automator
 
 case "$1" in
