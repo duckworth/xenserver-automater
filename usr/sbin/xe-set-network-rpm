@@ -28,7 +28,7 @@ EOF
 cat << EOF > /etc/sysconfig/network
 NETWORKING=yes
 HOSTNAME=$NAME.$DM
-GATEWAY=$IP
+GATEWAY=$GW
 EOF
 
 cat << EOF > /etc/resolv.conf
