@@ -7,8 +7,8 @@
 
 case "$1" in
   start)
-    /usr/sbin/xe-set-network
     /usr/sbin/xe-set-hostname
+    /usr/sbin/xe-set-network
     /usr/sbin/xe-set-authorized-keys
     chkconfig xe-automater off
   ;;
