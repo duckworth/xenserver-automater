@@ -23,6 +23,10 @@ cat << EOF > /etc/hosts
 $IP	$NAME.$DOMAIN	$NAME	
 EOF
 
+cat << EOF > /etc/hostname
+$NAME
+EOF
+
 #set in memory immediately
 hostname $NAME.$DOMAIN
 	
