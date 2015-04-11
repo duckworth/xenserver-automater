@@ -30,6 +30,6 @@ if [ ! "$DM" = "" ]; then
   echo "        dns-search $DM" >> /etc/network/interfaces
 fi
 
-/etc/init.d/networking restart
+ifup eth0
 
 exit 0
