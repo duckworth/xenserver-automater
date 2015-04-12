@@ -24,7 +24,7 @@ $IP	$NAME.$DOMAIN	$NAME
 EOF
 
 cat << EOF > /etc/hostname
-$NAME
+$NAME.$DOMAIN
 EOF
 
 #set in memory immediately
